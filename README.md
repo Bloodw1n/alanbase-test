@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# React User Select Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a custom, efficient, and user-friendly **Select component** built with React, designed to handle large datasets with **infinite scroll** and **virtualized rendering**. The component loads user data from an API in batches of 50 and provides smooth navigation through both mouse and keyboard.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Lazy Loading with Infinite Scroll**: Automatically loads 50 users at a time as you scroll, using a simulated API.
+- **Virtualized List**: Renders only visible items to enhance performance, even with large datasets (up to 5000 users).
+- **Keyboard Navigation**: Navigate through the list using arrow keys, with automatic scrolling to keep highlighted items in view.
+- **Text Overflow Handling**: Long names are truncated with ellipsis (`...`) and display the full name on hover.
+- **Accessible and Responsive**: Optimized for both desktop and mobile users.
 
-## Expanding the ESLint configuration
+## Setup and Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/Bloodw1n/alanbase-test.git
+    cd react-user-select
+    ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Run the App**:
+    ```bash
+    npm run dev
+    ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. Open [http://localhost:3000](http://localhost:3000) to view the component in the browser.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Usage
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The `Select` component displays a dropdown with a list of users. You can:
+- Click to open the dropdown.
+- Scroll to load more users as you reach the bottom of the list.
+- Navigate with the arrow keys, with the highlighted user auto-scrolling into view.
+- Hover over truncated text to view the full user information.
